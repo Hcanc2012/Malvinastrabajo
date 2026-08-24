@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marcha de las Malvinas</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+ 
+   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRczVZsq77Vy9t_Mq90J_QCHJn57GAtMJyOcg&s=10");
+  
+}
+
+h1{
+
+text-align:center;
+
+font-size:52px;
+
+margin-top:10px;
+
+}
+
+h2{
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:normal;
+
+margin-bottom:30px;
+
+}
+
+.integrantes{
+
+position:absolute;
+
+top:20px;
+
+right:20px;
+
+width:290px;
+
+background:rgba(255,255,255,.15);
+
+border-radius:15px;
+
+padding:18px;
+
+text-align:center;
+
+border:2px solid rgba(255,255,255,.4);
+
+}
+
+.integrantes h3{
+
+margin-bottom:10px;
+
+font-size:26px;
+
+}
+
+.integrantes p{
+
+font-size:20px;
+
+margin:7px 0;
+
+}
+
+.fila{
+
+display:flex;
+
+gap:20px;
+
+margin-top:25px;
+
+}
+
+.tarjeta{
+
+flex:1;
+
+background:white;
+
+border-radius:15px;
+
+padding:20px;
+
+color:#222;
+
+}
+
+.tarjeta h3{
+
+text-align:center;
+
+margin-bottom:20px;
+
+font-size:28px;
+
+}
+
+button{
+
+width:100%;
+
+padding:18px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:10px;
+
+background:#1976d2;
+
+color:white;
+
+cursor:pointer;
+
+margin-bottom:20px;
+
+}
+
+audio{
+
+width:100%;
+
+height:60px;
+
+}
+
+textarea{
+
+width:100%;
+
+height:320px;
+
+resize:none;
+
+padding:15px;
+
+font-size:18px;
+
+border-radius:10px;
+
+}
+
+input{
+
+display:none;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+margin-top:35px;
+
+}
+
+.bloque{
+
+padding:18px;
+
+border-radius:15px;
+
+color:white;
+
+cursor:pointer;
+
+border:4px solid transparent;
+
+}.azul{
+
+background:#1565c0;
+
+}
+
+.verde{
+
+background:#2e7d32;
+
+}
+
+.naranja{
+
+background:#ef6c00;
+
+}
+
+.violeta{
+
+background:#6a1b9a;
+
+}
+
+.bloque.activo{
+
+border:4px solid white;
+
+}
+
+.bloque h4{
+
+font-size:30px;
+
+margin-bottom:12px;
+
+text-align:center;
+
+}
+
+.bloque p{
+
+font-size:18px;
+
+line-height:1.5;
+
+margin-bottom:8px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="integrantes">
+
+<h3>Integrantes</h3>
+
+<p>Josías Juarez</p>
+
+<p>Bautista Ponce De León</p>
+
+<p>Sebastián Melia</p>
+
+</div>
+
+<h1>Marcha de las Malvinas</h1>
+
+<h2>Trabajo Práctico De Musica</h2>
+
+<div class="fila">
+
+<div class="tarjeta">
+
+<h3>Reproductor MP3</h3>
+
+<input type="file" id="mp3" accept=".mp3,audio/mpeg">
+
+<button onclick="document.getElementById('mp3').click()">
+
+Seleccione Marcha de la malvinas
+
+</button>
+
+<audio id="audio" controls></audio>
+
+</div>
+
+<div class="tarjeta">
+
+<h3>Letra</h3>
+
+<input type="file" id="txt" accept=".txt">
+
+<button onclick="document.getElementById('txt').click()">
+
+Cargar archivo TXT
+
+</button>
+
+<textarea id="letra" readonly placeholder="Aquí aparecerá la letra cargada desde el archivo TXT."></textarea>
+
+</div>
+
+</div>
+
+<div class="grid">
+<div class="bloque azul" onclick="seleccionar(this)">
+
+<h4>A</h4>
+
+   <p><b>Momento:</b> Intro - Estrofa</p>
+   
+<p><b>Tiempo:</b> 0:00 - 0:42</p>
+
+
+<p><b>Instrumentos:</b> Banda, vientos y percusión.</p>
+
+</div>
+
+
+<div class="bloque azul" onclick="seleccionar(this)">
+
+<h4>B</h4>
+   
+   <p><b>Momento:</b>Estrofa</p>
+
+<p><b>Tiempo:</b> 0:42 - 1:00</p>
+
+
+<p><b>Instrumentos:</b> Metales y percusión.</p>
+
+</div>
+
+
+<div class="bloque verde" onclick="seleccionar(this)">
+
+<h4>B'</h4>
+   
+   <p><b>Momento:</b>Estrofa</p>
+
+<p><b>Tiempo:</b> 1:00 - 1:17</p>
+
+<p><b>Instrumentos:</b> Cuerdas y vientos.</p>
+
+</div>
+
+
+<div class="bloque verde" onclick="seleccionar(this)">
+
+<h4>C</h4>
+   
+    
+   <p><b>Momento:</b>Instrumental (interludio)</p>
+
+
+<p><b>Tiempo:</b> 1:17 - 1:21</p>
+
+
+<p><b>Instrumentos:</b> Banda completa.</p>
+
+</div>
+<div class="bloque naranja" onclick="seleccionar(this)">
+
+<h4>A'</h4>
+   
+    
+   <p><b>Momento:</b>Estrofa</p>
+
+ 
+   <p><b>Tiempo:</b>1:21-1:58</p>
+
+
+<p><b>Instrumentos:</b> Vientos, cuerdas y percusión.</p>
+
+</div>
+
+
+<div class="bloque naranja" onclick="seleccionar(this)">
+
+<h4>B</h4>
+   
+    
+   <p><b>Momento:</b>Estrillo</p>
+
+
+<p><b>Tiempo:</b> 1:58 - 2:15</p>
+
+
+<p><b>Instrumentos:</b> Metales y banda completa.</p>
+
+</div>
+
+
+<div class="bloque violeta" onclick="seleccionar(this)">
+
+<h4>D</h4>
+   
+    
+   <p><b>Momento:</b>Estribillo</p>
+
+
+<p><b>Tiempo:</b> 2:15 - 2:20</p>
+
+
+<p><b>Instrumentos:</b> Toda la banda.</p>
+
+</div>
+
+
+<div class="bloque violeta" onclick="seleccionar(this)">
+
+<h4>D′</h4>
+   
+    
+   <p><b>Momento:</b>Cierre final</p>
+
+
+<p><b>Tiempo:</b> 2:20 - 2:28</p>
+
+
+
+<p><b>Instrumentos:</b> Banda completa y percusión final.</p>
+
+</div>
+    <br>
+      
+<button onclick="location.href='video.html'">
+Ver informacion de la marcha
+</button>
+
+
+</div>
+
+
+</div>
+<script>
+
+const mp3 = document.getElementById("mp3");
+const audio = document.getElementById("audio");
+
+mp3.addEventListener("change", function(){
+
+let archivo = this.files[0];
+
+if(archivo){
+
+audio.src = URL.createObjectURL(archivo);
+
+audio.load();
+
+}
+
+});
+
+
+const txt = document.getElementById("txt");
+const letra = document.getElementById("letra");
+
+
+txt.addEventListener("change", function(){
+
+let archivo = this.files[0];
+
+if(archivo){
+
+let lector = new FileReader();
+
+lector.onload = function(e){
+
+letra.value = e.target.result;
+
+}
+
+lector.readAsText(archivo);
+
+}
+
+});
+
+
+function seleccionar(elemento){
+
+let bloques = document.querySelectorAll(".bloque");
+
+bloques.forEach(function(bloque){
+
+bloque.classList.remove("activo");
+
+});
+
+
+elemento.classList.add("activo");
+
+}
+
+</script>
+</body>
+
+</html>
